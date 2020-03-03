@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login and Register For PESON</title>
+        <style>
+            
+        body{
+            background-image: url(pes3.jpg);
+            width: device-width;
+            background-size: contain;
+            background-position: center;
+        }
+        
+        .login-page{
+            width: 500px;
+            padding: 20% 0 0;
+            margin: auto;
+        }
+
+        .form{
+            position: relative;
+            z-index: 1;
+            max-width: 360px;
+            margin: 0 auto 100px;
+            padding: 45px;
+            text-align: center;
+        }
+        
+        .form input{
+            font-family: Arial, Helvetica, sans-serif;
+            outline: 1;
+            background: #f2f2f2;
+            width: 100%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .form button{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva' ,' Verdana' , 'sans-serif';
+            text-transform: uppercase;
+            outline: 0;
+            background: #abcdef;
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #123;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        
+        .form button:hover,.form button:active{
+            background: orangered;
+        }
+
+        .form [type=button:after]{
+            background-color: orange ;
+        }
+
+        .form .message{
+            margin: 15px 0 0;
+            background: #91ff00;
+            font-size: 14px;
+        }
+
+        .form .message a{
+            color: hsl(355, 85%, 51%);
+            text-decoration: none;
+        }
+
+        .form .login-form{
+            display: none;
+        }
+      
+        </style>
+    </head>
+
+    <body>
+        <div class="login-page">
+        <div class="form">
+            
+            <form class="register-form">
+            <input type="text" placeholder="username"/>
+            <input type="password" placeholder="password"/>
+            <input type="email" placeholder="email id"/>
+             <input type="button" onclick="window.open('login.html','_self')" value='CREATE'/>
+            <p class="message">Already Registered? <a href="#">Login Here</a></p>
+            </form>
+
+            <form class="login-form">
+            <input type="text" placeholder="username" name="userid"/>
+            <input type="password" placeholder="password" name="pswrd"/>
+            <input type="button" onclick="check(this.form)" value="Login"/>
+            <p class="message">Not Registered? <a href="#">Register Here</a></p>
+            </form>
+
+        </div>
+        </div>
+
+        

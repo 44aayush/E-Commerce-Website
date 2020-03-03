@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PESON</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		}
+
+
+body
+{
+	background-color: beige;
+	font-family: sans-serif;
+}
+
+/*-------navigation bar css------*/
+
+.top-nav-bar
+{
+	height: 57px;
+	top:0;
+	position: sticky;
+	background: #fff;
+	margin-bottom: 20px;
+	margin-bottom: 3px solid orange;
+	z-index: 2; 
+}
+.logo2
+{
+	height: 40px;
+	margin: 5px 10px;
+}
+.form-control
+{
+	margin-top:9px;
+	margin-left: 30px;
+	border: 1px solid orange !important;
+	border-top-left-radius: 20px !important;
+	border-bottom-right-radius: 20px !important;
+	border-top-right-radius: 20px !important;
+	border-bottom-left-radius: 20px !important;
+	box-shadow: none !important;
+}
+.input-group-text
+{
+	background: orange !important;
+	border: 1px solid orange !important;
+	margin: 8.5px 10px 3px 0 !important;
+	border-top-left-radius: 0px !important;
+	border-bottom-left-radius: 0px !important;
+	border-top-right-radius: 20px !important;
+	border-bottom-left-radius: 20px !important; 
+	cursor: pointer;
+}
+.search-box
+{
+	display: inline-flex;
+	width: 60%;
+}
+
+.fa-search
+{
+	color: white;
+}
+.menu-bar
+{
+	width: 40%;
+	height: 57px;
+	float: right;
+}
+.menu-bar ul
+{
+	display: inline-flex;
+	float: right;
+}
+.menu-bar ul li
+{
+	border-left: 1px solid white;
+	list-style-type: none;
+	padding: 15px 35px;
+	text-align: center;
+	background-color: orange;
+	cursor: pointer;
+}
+.menu-bar ul li a
+{
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+}
+.fa-shopping-basket
+{
+	margin-right: 5px;
+}
+
+/*--to make page responsive enough---*/
+
+@media only screen and (max-width: 980px)
+{
+	.top-nav-bar
+	{
+		height: 118px;
+		border-bottom: 0;
+	}
+	.search-box
+	{
+		width: 100%;
+	}
+	.menu-bar
+	{
+		width: 100%;
+	}
+	.menu-bar ul
+	{
+		margin: 10px 0;
+		width: 100%;
+	}
+	.menu-bar ul li
+	{
+		height: 57px;
+		width: 100%;
+	}
+}
+
+/*------------------side menu-------------*/
+.side-menu
+{
+	height: 79%;
+	width: 15%;
+	font-size: 14px;
+	float: left;
+	z-index: 2;
+	background-color: #ddd;
+}
+
+.side-menu ul
+{
+	margin-left: 10px;
+}
+.side-menu ul li
+{
+	list-style-type: none;
+	font-weight: bold;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.side-menu ul li:hover
+{
+	color: orange;
+}
+
+.side-menu ul li ul
+{
+	display: none;
+	z-index: 10;
+	top: 77px;
+}
+
+.side-menu ul li:hover ul
+{
+	display: block;
+	height: 400px;
+	margin-left: 14%;
+	padding: 0 100px 10px 10px;
+	position: fixed;
+	background: #ececec;
+	box-shadow: 1px 1px 4px 1px rgba(0,0,0.5);
+}
+
+.fa-angle-right
+{
+	margin-top: 4px;
+	margin-right: 8px;
+	float: right;
+}
+
+#menu-bin,#close-bin
+{
+	font-size: 30px;
+	margin: 10px;
+	color: orange;
+	display: none;
+}
+
+/*------to make website interactive------*/
+
+@media only screen and (max-width: 980px)
+{
+	.side-menu
+	{
+		width: 34%;
+		z-index: 20;
+		top: 33px;
+		position: fixed;
+		font-size: 12px;
+		background: #f1f3f4;
+		display: none;
+	}
+	.side-menu ul li ul
+	{
+		top: 133px;
+	}
+	.side-menu ul li:hover ul
+	{
+		margin-left: 31%;
+	}
+
+	#menu-btn
+	{
+		display: block;
+	}
+}
+
+/*------------slider css---------*/
+
+.slider
+{
+	width: 83%;
+	margin-left: 15%;
+	padding: 0 10px;
+}
+
+.carousel
+{
+	box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.5);
+}
+
+.carousel-indicators
+{
+	z-index: 1 !important;
+}
+
+/*--------------featured categories-----------*/
+
+.featured-categories
+{
+	margin: 50px 0;
+}
+.featured-categories img
+{
+	width: 100%;
+	padding: 20px 0;
+	transition: 1s;
+	cursor: pointer;
+}
+.featured-categories img:hover
+{
+	transform: scale(1.1);
+}
+
+/*---------On Sale CSS---------*/
+
+.title-box
+{
+	background-color: orange;
+	color: #fff;
+	width: 180px;
+	padding: 4px 10px;
+	height: 40px;
+	margin-bottom: 30px;
+	display: flex;
+}
+
+.title-box h2
+{
+	font-size: 24px;
+}
+
+.title-box::after
+{
+	content: '';
+	border-top: 40px solid orange;
+	border-right: 50px solid transparent;
+	position: absolute;
+	display: flex;
+	margin-top: -4px;
+	margin-left: 170px;
+}
+
+/*------------product-top-css---------*/
+.product-top img
+{
+	width: 100%;
+}
+
+.overlay-right
+{
+	display: block;
+	opacity: 0;
+	position: absolute;
+	top: 10%;
+	margin-left: 0;
+	width: 70px;
+}
+
+.overlay-right.fa
+{
+	cursor: pointer;
+	background-color: #fff;
+	color: #000;
+	height: 35px;
+	width: 35px;
+	font-size: 20px;
+	padding: 7px;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.overlay-right .btn-secondary
+{
+	background: grey !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+.product-top:hover .overlay-right
+{
+	opacity: 1;
+	margin-left: 5%;
+	transition: 0.5s;
+}
+
+
+/*--------product bottom css----------*/
+
+.product-bottom .fa
+{
+	color: orange;
+	font-size: 10px;
+}
+
+.product-bottom h3
+{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.product-bottom h5
+{
+	font-size: 15px;
+	padding: 10px;
+}
+
+/*--------new product------*/
+
+.New-products
+{
+	margin: 50px 0;
+}
+
+/*------website feature------*/
+
+.website-features img
+{
+	width:20%;
+}
+
+.feature-text
+{
+	margin-top: 10px;
+	float: right;
+	width: 80%;
+	padding-left: 20px;
+}
+.feature-box
+{
+	padding-top: 20px;
+}
+
+/*---------footer--------*/
+
+.footer
+{
+	margin-top: 50px;
+	background: #000;
+	color: #fff; 
+}
+.footer h1
+{
+	font-size: 15px;
+	margin-bottom: 25px 0;
+}
+.footer p
+{
+	font-size: 12px;
+}
+
+.copyright
+{
+	margin-bottom: -80px
+	text-align:center;
+	font-size: 15px;
+	padding-bottom: 20px;
+}
+
+.fa-heart-o
+{
+	color: red;
+	font-size: 15px
+}
+.footer hr
+{
+	margin-top: 10px;
+	background-color: #ccc;
+}
+.footer-image img
+{
+	width: 150px;
+}
+
+.footer .row .fa
+{
+	padding-right: 20px;
+	font-size: 15px;
+}
+</style>
+</head>
+<body>
+
+	<!---------to create the navigation bar-------->
+
+
+	<div class="top-nav-bar">
+		<div class="search-box">
+			
+			<i class="fa fa-bars" id="menu-bin" onclick="openmenu()"></i>
+			<i class="fa fa-bars2" id="close-bin" onclick="closemenu()"></i>
+
+			<img src="cart_pic.png" class="logo2" alt="ERROR"/>
+			<input type="text" class="form-control">
+			<span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+		</div>
+		<div class="menu-bar">
+			<ul>
+				<li><a onclick="window.open('Shopping Cart.php','_blank')"><i class="fa fa-shopping-basket"></i>cart</a></li>
+				<li><a onclick="window.open('signup.html','_self')">Sign Up</a></li>
+				<li><a onclick="window.open('login.html','_self')">Log Out</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!--------navigation bar--------->
+
+	<!----------side menu bar------->
+
+	<section class="header"></section>
+	<div class="side-menu" id="side-menu">
+		<ul>
+			<li>On Sale<i class="fa fa-angle-right"></i>
+				<ul>
+					<li>Flash Sale</li>
+					<li>Recommmended</li>					
+				</ul>
+			</li>
+			<li>Men<i class="fa fa-angle-right"></i>
+				<ul>
+					<li>Casual Wear</li>
+					<li>Formal Wear</li>
+					<li>Watches</li>
+					<li>Shoes</li>		
+				</ul>
+			</li>
+			<li>Women<i class="fa fa-angle-right"></i>
+				<ul>
+					<li>Casual Wear</li>
+					<li>Formal Wear</li>
+					<li>Watches</li>
+					<li>Shoes</li>		
+				</ul>
+			</li>
+			<li>Sports<i class="fa fa-angle-right"></i>
+				<ul>
+					<li>Cricket</li>
+					<li>Football</li>
+					<li>Basketball</li>
+					<li>Volleyball</li>
+				</ul>
+			</li>
+			<li>Stationary<i class="fa fa-angle-right"></i>
+			<ul>
+					<li>Notebook</li>
+					<li>Bluebook</li>
+					<li>Textbook</li>
+					<li>Writing Material</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+
+	<!----------side menu bar------->
+
+<!-- taken from bootstrap website-->
+<!----to make slider for the photos and add them------->
+<div class="slider">
+	<div id="slider" class="carousel slide carousel-fade" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="photos/gadjet1.jpg" class="d-block w-100" onclick="window.open('https://www.w3schools.com','_self')">
+    </div>
+    <div class="carousel-item">
+      <img src="photos/slider1.jpg" class="d-block w-100" onclick="window.open('https://www.w3schools.com','_self')">
+    </div>
+    <div class="carousel-item">
+      <img src="PHOTOSCOMPRESSED/slider3.jpg" class="d-block w-100" onclick="window.open('https://www.w3schools.com','_self')">
+    </div>
+    <div class="carousel-item">
+      <img src="PHOTOSCOMPRESSED/slider2.jpg" class="d-block w-100" onclick="window.open('https://www.w3schools.com','_self')">
+    </div>
+    <div class="carousel-item">
+      <img src="photos/sports.png" class="d-block w-100" onclick="window.open('https://www.w3schools.com','_self')">
+    </div>
+    <div class="carousel-item">
+      <img src="PHOTOSCOMPRESSED/slider4.jpg" class="d-block w-100" onclick="window.open('https://www.w3schools.com','_self')">
+    </div>
+  </div>
+   <ol class="carousel-indicators">
+    <li data-target="#slider" data-slide-to="0" class="active"></li>
+    <li data-target="#slider" data-slide-to="1"></li>
+    <li data-target="#slider" data-slide-to="2"></li>
+    <li data-target="#slider" data-slide-to="3"></li>
+    <li data-target="#slider" data-slide-to="4"></li>
+    <li data-target="#slider" data-slide-to="5"></li>
+  </ol>
+</div>
+</div>	
+
+
+<!----to make slider for the photos and add them------->
+
+
+</section>
+
+<!--------------featured categories------------->
+<section class="featured-categories">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<img src="photos/featured/sub_stationary.jpg" onclick="window.open('https://www.w3schools.com','_self')">
+			</div>
+			<div class="col-md-4">
+				<img src="photos/featured/sub_shoes1.jpg" onclick="window.open('https://www.w3schools.com','_self')">
+			</div>
+			<div class="col-md-4">
+				<img src="photos/featured/sub_books1.jpg" onclick="window.open('https://www.w3schools.com','_self')">
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--------featured categories-------->
+
+
+<!------------on sale product-------->
+
+<section class="on-sale">
+	<div class="container">
+		<div class="title-box">
+			<h2>On Sale</h2>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="product-top">
+					<img src="photos/offers/sub_shoes2.jpg" onclick="window.open('https://www.w3schools.com','_self')">
+					<div class="overlay-right">
+						<button type="button" class="btn btn-secondary" title="Quick Shop">
+							<i class="fa fa-eye"></i>
+						</button>
+						<button type="button" class="btn btn-secondary" title="Add to Wishlist">
+							<i class="fa fa-heart-o"></i>
+						</button>
+						<button type="button" class="btn btn-secondary" title="Add to Cart">
+							<i class="fa fa-shopping-cart"></i>
+						</button>
+					</div>
+				</div>
+				<div class="product-bottom text-center">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half-o"></i>
+					<h3>Sandles</h3>
+					<h5>$50.00</h5>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="product-top">
+					<img src="photos/offers/offer_tshirt1.jpg" onclick="window.open('https://www.w3schools.com','_self')">
+					<div class="overlay-right">
+						<button type="button" class="btn btn-secondary" title="Quick Shop">
+							<i class="fa fa-eye"></i>
+						</button>
+						<button type="button" class="btn btn-secondary" title="Add to Wishlist">
+							<i class="fa fa-heart-o"></i>
+						</button>
+						<button type="button" class="btn btn-secondary" title="Add to Cart">
+							<i class="fa fa-shopping-cart"></i>
+						</button>
+					</div>
+				</div>
+				<div class="product-bottom text-center">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half-o"></i>
+					<h3>T-Shirts</h3>
+					<h5>$30.00</h5>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="product-top">
+					<img src="photos/offers/offer_shoes1.jpg" onclick="window.open('https://www.w3schools.com','_self')">
+					<div class="overlay-right">
+						<button type="button" class="btn btn-secondary" title="Quick Shop">
+							<i class="fa fa-eye"></i>
+						</button>
+						<button type="button" class="btn btn-secondary" title="Add to Wishlist">
+							<i class="fa fa-heart-o"></i>
+						</button>
+						<button type="button" class="btn btn-secondary" title="Add to Cart">
+							<i class="fa fa-shopping-cart"></i>
+						</button>
+					</div>
+				</div>
+				<div class="product-bottom text-center">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-o"></i>
+					<i class="fa fa-star-o"></i>
+					<h3>Sports Shoes</h3>
+					<h5>$40.00</h5>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="product-top">
+					<img src="photos/offers/bat.jpg" onclick="window.open('https://www.w3schools.com','_self')">
+					<div class="overlay-right">
+						<button type="button" class="btn btn-secondary" title="Quick Shop">
+							<i class="fa fa-eye"></i>
+						</button>
+						<button type="button" class="btn btn-secondary" title="Add to Wishlist">
+							<i class="fa fa-heart-o"></i>
+						</button>
+						<button type="button" class="btn btn-secondary" title="Add to Cart">
+							<i class="fa fa-shopping-cart"></i>
+						</button>
+					</div>
+				</div>
+				<div class="product-bottom text-center">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-o"></i>
+					<h3>Bats</h3>
+					<h5>$30.00</h5>
+				</div>
+			</div>
+
+
+
+
+		</div>
+	</div>
+</section>
+
+<!-----on sale products------->
+
+<!-----New products------->
+
+<section class="New-products">
+	<div class="container">
+		<div class="title-box">
+			<h2>New Arrivals</h2>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="product-top">
+					<img src="photos/new arrivals/bag.jpg" onclick="window.open('https://www.w3schools.com','_self')">
+					<div class="overlay-right">
+						<button type="button" class="btn btn-secondary" title="Quick Shop">
+							<i class="fa fa-eye"></i>
+						</button>
+						<button type="button" class="btn btn-secondary" title="Add to Wishlist">
+							<i class="fa fa-heart-o"></i>
+						</button>
+						<button type="button" class="btn btn-secondary" title="Add to Cart">
+							<i class="fa fa-shopping-cart"></i>
+						</button>
+					</div>
+				</div>
+				<div class="product-bottom text-center">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-o"></i>
+					<h3>Laptop Bag</h3>
+					<h5>$35.00</h5>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="product-top">
+					<img src="photos/new arrivals/headphone3.jpg" onclick="window.open('https://www.w3schools.com','_self')">
+					<div class="overlay-right">
+						<button type="button" class="btn btn-secondary" title="Quick Shop">
+							<i class="fa fa-eye"></i>
+						</button>
+						<button type="button" class="btn btn-secondary" title="Add to Wishlist">
+							<i class="fa fa-heart-o"></i>
+						</button>
+						<button type="button" class="btn btn-secondary" title="Add to Cart">
+							<i class="fa fa-shopping-cart"></i>
+						</button>
+					</div>
+				</div>
+				<div class="product-bottom text-center">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half-o"></i>
+					<h3>Rich Bass</h3>
+					<h5>$99.00</h5>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="product-top">
+					<img src="photos/new arrivals/shirt.jpg" onclick="window.open('https://www.w3schools.com','_self')">
+					<div class="overlay-right">
+						<button type="button" class="btn btn-secondary" title="Quick Shop">
+							<i class="fa fa-eye"></i>
+						</button>
+						<button type="button" class="btn btn-secondary" title="Add to Wishlist">
+							<i class="fa fa-heart-o"></i>
+						</button>
+						<button type="button" class="btn btn-secondary" title="Add to Cart">
+							<i class="fa fa-shopping-cart"></i>
+						</button>
+					</div>
+				</div>
+				<div class="product-bottom text-center">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half-o"></i>
+					<h3>Trending</h3>
+					<h5>$15.00</h5>
+				</div>
+			</div>
+
+
+			<div class="col-md-3">
+				<div class="product-top">
+					<img src="photos/new arrivals/watch.jpg" onclick="window.open('https://www.w3schools.com','_self')">
+					<div class="overlay-right">
+						<button type="button" class="btn btn-secondary" title="Quick Shop">
+							<i class="fa fa-eye"></i>
+						</button>
+						<button type="button" class="btn btn-secondary" title="Add to Wishlist">
+							<i class="fa fa-heart-o"></i>
+						</button>
+						<button type="button" class="btn btn-secondary" title="Add to Cart">
+							<i class="fa fa-shopping-cart"></i>
+						</button>
+					</div>
+				</div>
+				<div class="product-bottom text-center">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-o"></i>
+					<i class="fa fa-star-o"></i>
+					<h3>Sports Watches</h3>
+					<h5>$40.00</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!------website-features-------->
+
+<section class="website-features">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 feature-box">
+				<img src="photos/footer/100%.jpg">
+				<div class="feature-text">
+					<p><b>100% Original items</b>are available at company</p>
+				</div>
+			</div>
+			<div class="col-md-3 feature-box">
+				<img src="photos/footer/easy.jpg">
+				<div class="feature-text">
+					<p><b>Returns within 30 days</b>of recieving your order.</p>
+				</div>
+			</div>
+			<div class="col-md-3 feature-box">
+				<img src="photos/footer/delivery.jpg">
+				<div class="feature-text">
+					<p><b>Get free delivery for every</b>order on evey prize</p>
+				</div>
+			</div>
+			<div class="col-md-3 feature-box">
+				<img src="photos/footer/pay.png">
+				<div class="feature-text">
+					<p><b>Pay Online through multiple</b>options</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--------footer--------->
+
+<section class="footer">
+	<div class="container tex-center">
+		<div class="row">
+			<div class="col-md-3">
+				<h1>Useful Links</h1>
+				<p>Privacy Policy</p>
+				<p>Terms of Use</p>
+				<p>Return Policy</p>
+				<p>Discount Coupons</p>
+			</div>
+			<div class="col-md-3">
+				<h1>Company</h1>
+				<p>About Us</p>
+				<p>Contact Us</p>
+				<p>Career</p>
+				<p>Affiliate</p>
+			</div>
+			<div class="col-md-3">
+				<h1>Follow Us On</h1>
+				<p><i class="fa fa-facebook-official"></i>Facebook</p>
+				<p><i class="fa fa-youtube-play"></i>Youtube</p>
+				<p><i class="fa fa-linkedin"></i>Linkedin</p>
+				<p><i class="fa fa-twitter"></i>Twitter</p>
+			</div>
+			<div class="col-md-3 footer-image">
+				<h1>Download App</h1>
+				<img src="photos/footer/logo1.png">
+			</div>
+		</div>
+		<hr>
+		<p class="copyright">Made by <i class="fa fa-heart-o"></i> Shashank,Ayush,Adya</p>
+	</div>
+</section>
+
+<script type="text/javascript">
+	function openmenu()
+	{
+		document.getElementById("side-menu").style.display="block";
+		document.getElementById("menu-btn").style.display="none";
+		document.getElementById("close-btn").style.display="block";
+	}
+	function closemenu()
+	{
+		document.getElementById("side-menu").style.display="none";
+		document.getElementById("menu-btn").style.display="block";
+		document.getElementById("close-btn").style.display="none";
+	}
+</script>
+
+</body>
+
+</html>
